@@ -1,4 +1,5 @@
-# Creation of faculty table
+#Creation of faculty table
+CREATE DATABASE alu_db;
 USE alu_db;
 CREATE TABLE Faculty(
     faculty_id INT PRIMARY KEY,
@@ -21,10 +22,7 @@ WHERE faculty_id = 20241;
 #DELETE statement from faculty table(Refi_19)
 DELETE FROM Faculty
 WHERE faculty_id = 20244;
-
--- =====================
--- Member B: Classroom Table
--- =====================
+#MemberB
 -- Create Classroom table
 CREATE TABLE Classroom (
     classroom_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -51,10 +49,8 @@ WHERE classroom_id = 5;
 -- Member B: Select classrooms with capacity greater than 25
 SELECT * FROM Classroom
 WHERE capacity > 25;
-=======
--- Creation of the Database
 
-CREATE DATABASE alu_db;
+-- MemberD
 USE alu_db
 -- Creation on courses tabl
 
@@ -72,12 +68,11 @@ CREATE TABLE Courses(
 
 INSERT INTO Courses 
 VALUES
-(101, 'English', 600, 7, 10),
-(102, 'Maths', 500, 8, 11),
-(103, 'Science', 800, 9, 12),
-(104, 'Accounting', 700, 10, 13),
-(105, 'Public_health', 300, 11, 14);
-
+(101, 'English', 600, 20241, 1),
+(102, 'Maths', 500, 20242, 3),
+(103, 'Science', 800, 20243, 4),
+(104, 'Accounting', 700, 20244, 1),
+(105, 'Public_health', 300, 20241, 3);
 
 -- Updating the courses table
 
