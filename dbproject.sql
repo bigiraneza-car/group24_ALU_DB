@@ -24,3 +24,7 @@ VALUES
 UPDATE Classroom
 SET capacity = 45
 WHERE classroom_id = 3;
+
+-- Member B: Delete one classroom
+DELETE FROM Classroom
+WHERE classroom_id = 5;
