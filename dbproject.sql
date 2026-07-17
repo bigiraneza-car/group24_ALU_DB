@@ -19,3 +19,8 @@ VALUES
     ('303', 'Block C', 40, 3),
     ('104', 'Block A', 35, 1),
     ('205', 'Block B', 20, 2);
+
+-- Member B: Update one classroom
+UPDATE Classroom
+SET capacity = 45
+WHERE classroom_id = 3;
