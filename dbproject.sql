@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 #Creation of faculty table
+DROP DATABASE IF EXISTS alu_db;
 CREATE DATABASE alu_db;
 USE alu_db;
 CREATE TABLE Faculty(
@@ -52,9 +52,8 @@ SELECT * FROM Classroom
 WHERE capacity > 25;
 
 -- MemberD
-=======
->>>>>>> MemberD
-USE alu_db
+
+USE alu_db;
 -- Creation on courses table
 
 CREATE TABLE Courses (
@@ -75,7 +74,7 @@ VALUES
 (101, 'English', 600, 20241, 1),
 (102, 'Maths', 500, 20242, 3),
 (103, 'Science', 800, 20243, 4),
-(104, 'Accounting', 700, 20244, 1),
+(104, 'Accounting', 700, 20241, 1),
 (105, 'Public_health', 300, 20241, 3);
 
 -- Updating the courses table
@@ -84,7 +83,7 @@ UPDATE Courses SET Credits = 100 WHERE course_id = 102;
 
 -- Deleting a course_id in the Courses table
 
-DELETE FROM Courses WHERE course_id = 103;
+DELETE FROM Courses WHERE course_id = 104;
 
 -- Selecting a query
 
