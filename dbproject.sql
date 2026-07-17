@@ -10,3 +10,12 @@ CREATE TABLE Classroom (
     capacity INT NOT NULL,
     floor_number INT
 );
+
+-- Member B: Insert 5 sample rows
+INSERT INTO Classroom (room_number, building, capacity, floor_number)
+VALUES
+    ('101', 'Block A', 30, 1),
+    ('202', 'Block B', 25, 2),
+    ('303', 'Block C', 40, 3),
+    ('104', 'Block A', 35, 1),
+    ('205', 'Block B', 20, 2);
