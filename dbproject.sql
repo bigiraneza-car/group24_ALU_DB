@@ -71,7 +71,7 @@ CREATE TABLE Courses(
 
 -- Inserting into the courses table
 
-INSERt INTO Courses 
+INSERT INTO Courses 
 VALUES
 (101, 'English', 600, 7, 10),
 (102, 'Maths', 500, 8, 11),
