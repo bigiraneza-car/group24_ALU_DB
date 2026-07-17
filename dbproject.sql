@@ -28,3 +28,7 @@ WHERE classroom_id = 3;
 -- Member B: Delete one classroom
 DELETE FROM Classroom
 WHERE classroom_id = 5;
+
+-- Member B: Select classrooms with capacity greater than 25
+SELECT * FROM Classroom
+WHERE capacity > 25;
