@@ -1,29 +1,26 @@
--- Creation of the Database
-
-CREATE DATABASE alu_db;
 USE alu_db
--- Creation on courses tabl
+-- Creation on courses table
 
-CREATE TABLE Courses(
-	course_id INT PRIMARY KEY,
-	course_name VARCHAR(100),
-	credits INT,
-	faculty_id INT,
-	classroom_id INT,
-	FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id),
-	FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id)
+CREATE TABLE Courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(100),
+    credits INT,
+    faculty_id INT,
+    classroom_id INT,
+    FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id),
+    FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id)
 );
+
 
 -- Inserting into the courses table
 
-INSERt INTO Courses 
+INSERT INTO Courses 
 VALUES
-(101, 'English', 600, 7, 10),
-(102, 'Maths', 500, 8, 11),
-(103, 'Science', 800, 9, 12),
-(104, 'Accounting', 700, 10, 13),
-(105, 'Public_health', 300, 11, 14);
-
+(101, 'English', 600, 20241, 1),
+(102, 'Maths', 500, 20242, 3),
+(103, 'Science', 800, 20243, 4),
+(104, 'Accounting', 700, 20244, 1),
+(105, 'Public_health', 300, 20241, 3);
 
 -- Updating the courses table
 
@@ -36,4 +33,3 @@ DELETE FROM Courses WHERE course_id = 103;
 -- Selecting a query
 
 SELECT course_id, course_name, credits FROM Courses WHERE credits >= 500;
-
