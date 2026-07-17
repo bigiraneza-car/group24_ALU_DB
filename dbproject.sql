@@ -1,7 +1,4 @@
--- Creation of Database
-CREATE DATABASE alu_db;
-
--- Creation of faculty table
+# Creation of faculty table
 USE alu_db;
 CREATE TABLE Faculty(
     faculty_id INT PRIMARY KEY,
