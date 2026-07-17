@@ -174,9 +174,11 @@ SET category = 'Visual & Performing Arts'
 WHERE activity_id = 4;
 
 -- Member E: Individual Delete Statement
+-- (Removes student 4 from the Music Ensemble activity safely)
 DELETE FROM Student_Activities 
 WHERE student_id = 4 AND activity_id = 5;
 
 -- Member E: Individual Select Statement with WHERE
+-- Modified to account for the updated category name
 SELECT * FROM Extra_Curricular_Activities 
-WHERE category = 'Arts';
+WHERE category IN ('Arts', 'Visual & Performing Arts');
