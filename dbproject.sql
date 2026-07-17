@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Creation of faculty table
 CREATE DATABASE alu_db;
 USE alu_db;
@@ -51,18 +52,21 @@ SELECT * FROM Classroom
 WHERE capacity > 25;
 
 -- MemberD
+=======
+>>>>>>> MemberD
 USE alu_db
--- Creation on courses tabl
+-- Creation on courses table
 
-CREATE TABLE Courses(
-	course_id INT PRIMARY KEY,
-	course_name VARCHAR(100),
-	credits INT,
-	faculty_id INT,
-	classroom_id INT,
-	FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id),
-	FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id)
+CREATE TABLE Courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(100),
+    credits INT,
+    faculty_id INT,
+    classroom_id INT,
+    FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id),
+    FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id)
 );
+
 
 -- Inserting into the courses table
 
