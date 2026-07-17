@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 CREATE DATABASE alu_db;
 
 USE alu_db;
@@ -14,11 +14,11 @@ CREATE TABLE Students (
 );
 --inserting data in the table
 INSERT INTO Students(student_id, name, email, classroom_id, enrollment_date)
-VALUES(1, 'Gahimbare', 'gahimbare@gmail.com', 002, 02-04-2026),
-(2, 'Gatore', 'gatore@gmail.com', 002, 15-11-2026),
-(3, 'Brinda', 'brinda@gmail.com', 002, 25-07-2025),
-(4, 'Gabimana', 'gabimana@gmail.com', 002, 09-01-2025),
-(5, 'Rukiza', 'rukiza@gmail.com', 002, 18-10-2026);
+VALUES(1, 'Gahimbare', 'gahimbare@gmail.com', 002, '2025-04-20'),
+(2, 'Gatore', 'gatore@gmail.com', 008, '2026-11-15'),
+(3, 'Brinda', 'brinda@gmail.com', 001, '2025-07-25'),
+(4, 'Gabimana', 'gabimana@gmail.com', 003, '2025-01-09'),
+(5, 'Rukiza', 'rukiza@gmail.com', 005, '2026-10-18');
 
 --select + where statement (Becky)
 SELECT name, email FROM Students
@@ -84,4 +84,4 @@ WHERE classroom_id = 5;
 -- Member B: Select classrooms with capacity greater than 25
 SELECT * FROM Classroom
 WHERE capacity > 25;
->>>>>>> f1ceeabe43edfc5ac73d3ebbb56e2ad72279afa5
+
