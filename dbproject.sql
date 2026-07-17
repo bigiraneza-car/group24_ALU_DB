@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-CREATE DATABASE alu_db;
-
-USE alu_db;
-SHOW TABLES;
---creating the students table(BeckymemberA)
-CREATE TABLE Students (
-    student_id INT PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100),
-    classroom_id INT,
-    FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id),
-    enrollment_date DATE
-);
---inserting data in the table
-INSERT INTO Students(student_id, name, email, classroom_id, enrollment_date)
-VALUES(1, 'Gahimbare', 'gahimbare@gmail.com', 002, 02-04-2026),
-(2, 'Gatore', 'gatore@gmail.com', 002, 15-11-2026),
-(3, 'Brinda', 'brinda@gmail.com', 002, 25-07-2025),
-(4, 'Gabimana', 'gabimana@gmail.com', 002, 09-01-2025),
-(5, 'Rukiza', 'rukiza@gmail.com', 002, 18-10-2026);
-
---select + where statement (Becky)
-SELECT name, email FROM Students
-WHERE student_id = 5;
---update statement(Becky)
-UPDATE Students
-SET email ='muhire@gmail.com'
-WHERE student_id = 5;
---delete statement (Becky)
-DELETE FROM Students 
-WHERE student_id = 5;
-=======
 # Creation of faculty table
 USE alu_db;
 CREATE TABLE Faculty(
@@ -66,14 +33,14 @@ CREATE TABLE Classroom (
     capacity INT NOT NULL,
     floor_number INT
 );
--- Member B: Insert 5 sample rows
-INSERT INTO Classroom (room_number, building, capacity, floor_number)
+-- Member B: Insert 5 sample rows with explicit classroom_id
+INSERT INTO Classroom (classroom_id, room_number, building, capacity, floor_number)
 VALUES
-    ('101', 'Block A', 30, 1),
-    ('202', 'Block B', 25, 2),
-    ('303', 'Block C', 40, 3),
-    ('104', 'Block A', 35, 1),
-    ('205', 'Block B', 20, 2);
+    (1, '101', 'Block A', 30, 1),
+    (2, '202', 'Block B', 25, 2),
+    (3, '303', 'Block C', 40, 3),
+    (4, '104', 'Block A', 35, 1),
+    (5, '205', 'Block B', 20, 2);
 -- Member B: Update one classroom
 UPDATE Classroom
 SET capacity = 45
@@ -84,4 +51,3 @@ WHERE classroom_id = 5;
 -- Member B: Select classrooms with capacity greater than 25
 SELECT * FROM Classroom
 WHERE capacity > 25;
->>>>>>> f1ceeabe43edfc5ac73d3ebbb56e2ad72279afa5
