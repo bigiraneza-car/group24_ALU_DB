@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Creation of faculty table
 USE alu_db;
 CREATE TABLE Faculty(
@@ -91,5 +90,3 @@ DELETE FROM Courses WHERE course_id = 103;
 -- Selecting a query
 
 SELECT course_id, course_name, credits FROM Courses WHERE credits >= 500;
-
->>>>>>> MemberD
