@@ -27,6 +27,9 @@ WHERE student_id = 5;
 UPDATE Students
 SET email ='muhire@gmail.com'
 WHERE student_id = 5;
+--delete statement (Becky)
+DELETE FROM Students 
+WHERE student_id = 5;
 =======
 # Creation of faculty table
 USE alu_db;
