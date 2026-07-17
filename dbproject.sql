@@ -2,6 +2,7 @@
 CREATE DATABASE alu_db;
 
 USE alu_db;
+SHOW TABLES;
 --creating the students table(BeckymemberA)
 CREATE TABLE Students (
     student_id INT PRIMARY KEY,
@@ -19,8 +20,12 @@ VALUES(1, 'Gahimbare', 'gahimbare@gmail.com', 002, 02-04-2026),
 (4, 'Gabimana', 'gabimana@gmail.com', 002, 09-01-2025),
 (5, 'Rukiza', 'rukiza@gmail.com', 002, 18-10-2026);
 
---select statement (Becky)
+--select + where statement (Becky)
 SELECT name, email FROM Students
+WHERE student_id = 5;
+--update statement(Becky)
+UPDATE Students
+SET email ='muhire@gmail.com'
 WHERE student_id = 5;
 =======
 # Creation of faculty table
