@@ -1,11 +1,9 @@
-<<<<<<< HEAD
+
 #Creation of faculty table
 DROP DATABASE IF EXISTS alu_db;
-=======
 
 
 
->>>>>>> 460a34e6438a8546c1a69a967cd17c0ea86ec259
 CREATE DATABASE alu_db;
 
 USE alu_db;
@@ -67,7 +65,7 @@ SELECT * FROM Classroom
 WHERE capacity > 25;
 
 
---creating the students table(BeckymemberA)
+-- creating the students table(BeckymemberA)
 CREATE TABLE Students (
     student_id INT PRIMARY KEY,
     name VARCHAR(100),
@@ -76,7 +74,7 @@ CREATE TABLE Students (
     FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id),
     enrollment_date DATE
 );
---inserting data in the table
+-- inserting data in the table
 INSERT INTO Students(student_id, name, email, classroom_id, enrollment_date)
 VALUES(1, 'Gahimbare', 'gahimbare@gmail.com', 2, '2025-04-20'),
     (2, 'Gatore', 'gatore@gmail.com', 4, '2026-11-15'),
@@ -84,14 +82,14 @@ VALUES(1, 'Gahimbare', 'gahimbare@gmail.com', 2, '2025-04-20'),
     (4, 'Gabimana', 'gabimana@gmail.com', 3, '2025-01-09'),
     (5, 'Rukiza', 'rukiza@gmail.com', 4, '2026-10-18');
 
---select + where statement (Becky)
+-- select + where statement (Becky)
 SELECT name, email FROM Students
 WHERE student_id = 5;
---update statement(Becky)
+-- update statement(Becky)
 UPDATE Students
 SET email ='muhire@gmail.com'
 WHERE student_id = 5;
---delete statement (Becky)
+-- delete statement (Becky)
 DELETE FROM Students 
 WHERE student_id = 5;
 
@@ -100,33 +98,6 @@ WHERE student_id = 5;
 
 
 
--- Group Task: Join Query 1
-SELECT CONCAT(s.name, ' is enrolled in ', co.course_name, ', taught by ', f.name, ', in Classroom ', cl.room_number, '.') AS sentence
-FROM Student_Courses sc
-JOIN Students s ON sc.student_id = s.student_id
-JOIN Courses co ON sc.course_id = co.course_id
-JOIN Faculty f ON co.faculty_id = f.faculty_id
-JOIN Classroom cl ON co.classroom_id = cl.classroom_id;
-
--- Group Task: Join Query 2
-SELECT CONCAT(s.name, ' participates in ', a.activity_name, ', advised by ', f.name, '.') AS sentence
-FROM Student_Activities sa
-JOIN Students s ON sa.student_id = s.student_id
-JOIN Extra_Curricular_Activities a ON sa.activity_id = a.activity_id
-JOIN Faculty f ON a.faculty_advisor_id = f.faculty_id;
-
--- Group Task: Join Query 3 (Custom Choice: Students and their corresponding assigned classroom)
-SELECT CONCAT(s.name, ' is assigned to homeroom ', cl.room_number, ' in the ', cl.building, ' building.') AS sentence
-FROM Students s
-JOIN Classroom cl ON s.classroom_id = cl.classroom_id;
-
--- Group Task: Aggregate Query (Number of students per course)
-SELECT co.course_name, COUNT(sc.student_id) AS student_count
-FROM Courses co
-LEFT JOIN Student_Courses sc ON co.course_id = sc.course_id
-GROUP BY co.course_id, co.course_name;
-
--- Creation of the Database
 
 
 -- MemberD
@@ -168,9 +139,7 @@ DELETE FROM Courses WHERE course_id = 104;
 SELECT course_id, course_name, credits FROM Courses WHERE credits >= 500;
 
 
--- ==========================================
 -- MEMBER E: EXTRA-CURRICULAR & JUNCTION TABLES
--- ==========================================
 
 -- 1. Extra_Curricular_Activities Table
 CREATE TABLE Extra_Curricular_Activities (
@@ -201,15 +170,15 @@ CREATE TABLE Student_Activities (
 
 -- Insert 5 activities
 INSERT INTO Extra_Curricular_Activities (activity_id, activity_name, category, faculty_advisor_id) VALUES
-(1, 'Robotics Club', 'STEM', 101),
-(2, 'Debate Team', 'Academic', 102),
-(3, 'Soccer Team', 'Sports', 103),
-(4, 'Drama Club', 'Arts', 104),
-(5, 'Music Ensemble', 'Arts', 105);
+(1, 'Robotics Club', 'STEM', 20241),
+(2, 'Debate Team', 'Academic', 20242),
+(3, 'Soccer Team', 'Sports', 20243),
+(4, 'Drama Club', 'Arts', 20241),
+(5, 'Music Ensemble', 'Arts', 20242);
 
 -- Insert sample records into Student_Courses
 INSERT INTO Student_Courses (student_id, course_id) VALUES
-(1, 10), (1, 11), (2, 10), (3, 12), (4, 11);
+(1, 101), (1, 102), (2, 101), (3, 103), (4, 105);
 
 -- Insert sample records into Student_Activities
 INSERT INTO Student_Activities (student_id, activity_id) VALUES
@@ -227,4 +196,30 @@ WHERE student_id = 4 AND activity_id = 5;
 -- Member E: Individual Select Statement with WHERE
 SELECT * FROM Extra_Curricular_Activities 
 WHERE category = 'Arts';
+-- Group Task: Join Query 1
+SELECT CONCAT(s.name, ' is enrolled in ', co.course_name, ', taught by ', f.name, ', in Classroom ', cl.room_number, '.') AS sentence
+FROM Student_Courses sc
+JOIN Students s ON sc.student_id = s.student_id
+JOIN Courses co ON sc.course_id = co.course_id
+JOIN Faculty f ON co.faculty_id = f.faculty_id
+JOIN Classroom cl ON co.classroom_id = cl.classroom_id;
 
+-- Group Task: Join Query 2
+SELECT CONCAT(s.name, ' participates in ', a.activity_name, ', advised by ', f.name, '.') AS sentence
+FROM Student_Activities sa
+JOIN Students s ON sa.student_id = s.student_id
+JOIN Extra_Curricular_Activities a ON sa.activity_id = a.activity_id
+JOIN Faculty f ON a.faculty_advisor_id = f.faculty_id;
+
+-- Group Task: Join Query 3 (Custom Choice: Students and their corresponding assigned classroom)
+SELECT CONCAT(s.name, ' is assigned to homeroom ', cl.room_number, ' in the ', cl.building, ' building.') AS sentence
+FROM Students s
+JOIN Classroom cl ON s.classroom_id = cl.classroom_id;
+
+-- Group Task: Aggregate Query (Number of students per course)
+SELECT co.course_name, COUNT(sc.student_id) AS student_count
+FROM Courses co
+LEFT JOIN Student_Courses sc ON co.course_id = sc.course_id
+GROUP BY co.course_id, co.course_name;
+
+-- Creation of the Database
